@@ -13,7 +13,7 @@ public class Clique_Tester {
 	public static boolean Debug = true;
 	public static int MAX_CLIQUE = 100000;
 	public static boolean Convert = true;
-	public static String[] default_args = {"data/small_graph_100.csv", "0.75","5","8"};
+	public static String[] default_args = {"data/test1_200.csv", "0.75","5","8"};
 	
 	public static void main(String[] args) {  // test1.csv_DG.txt  0.8 5 7
 		if(args==null || args.length<3) {
