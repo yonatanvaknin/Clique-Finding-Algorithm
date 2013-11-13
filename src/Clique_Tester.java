@@ -1,4 +1,5 @@
 
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,7 +35,7 @@ public class Clique_Tester {
 		System.out.println("Alg3: "+(t3-t2)+"  ms");
 	}
 	static void help() {
-		System.out.println("***Wrong Parameters! should use: java -jar All_Cliques <input file> <round value> <min clique> <max clique> <output file> <max_cliques> <Graph convert flag>");
+		System.out.println("Wrong Parameters! should use: java -jar All_Cliques <input file> <round value> <min clique> <max clique> <output file> <max_cliques> <Graph convert flag>");
 		System.out.println("Wrong Parameters! should use: java -jar All_Cliques test1.csv 0.7 5 7 test1_out.txt 10000 true");
 	}
 	static void parse(String[] a){
