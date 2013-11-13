@@ -1,6 +1,5 @@
 
 
-import java.util.Vector;
 
 /**
  * this class represent a dedicated Clique class which assumes undirected graph and holds 

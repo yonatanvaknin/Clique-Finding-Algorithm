@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
@@ -16,14 +17,14 @@ import java.util.Vector;
  */
  class Graph {
 	 private String _file_name;
-	 private Vector <VertexSet> _V;
+	 private ArrayList <VertexSet> _V;
 	 private double _TH; // the threshold value
 	 private int _E_size = 0;
 	 private boolean _mat_flag=true;
 	 Graph(String file, double th) {
 		this._file_name = file;
 		_TH = th;
-		_V = new  Vector <VertexSet>();
+		_V = new  ArrayList <VertexSet>();
 		 init();
 	 }
 	 
@@ -95,7 +96,7 @@ import java.util.Vector;
 	 }
 	
 	public VertexSet Ni(int i) {
-		VertexSet ans = _V.elementAt(i);
+		VertexSet ans = _V.get(i);
 		return  ans;
 	}
 	public void print() {
@@ -200,7 +201,7 @@ import java.util.Vector;
 	private Vector<VertexSet> allEdges() { // all edges � all cliques of size 2/
 		Vector<VertexSet> ans = new Vector<VertexSet>();
 		for(int i=0;i<_V.size();i++) {
-			VertexSet curr = _V.elementAt(i);
+			VertexSet curr = _V.get(i);
 			for(int a=0;a<curr.size();a++) {
 				if(i<curr.at(a)) {
 					VertexSet tmp = new VertexSet();
@@ -336,7 +337,7 @@ import java.util.Vector;
 		os.println("ALL_Cliques: of file: "+_file_name+",  TH:"+this._TH);
 		os.println("");
 		for(int i=0;i<this._V.size();i++) {
-			VertexSet curr = _V.elementAt(i);
+			VertexSet curr = _V.get(i);
 			os.println(i+", "+curr.toFile());
 		}
 		os.close();
