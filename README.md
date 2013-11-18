@@ -1,3 +1,4 @@
 Clique-finding-algorithm
 ========================
-hello and welcome :)
+
+Simon & Sergey branch
