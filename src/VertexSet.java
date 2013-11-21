@@ -18,11 +18,13 @@ public class VertexSet {
 	public VertexSet(VertexSet ot) {
 		_set = new int[INIT_SIZE];
 		_sp=0;
-		for(int i=0;i<ot.size();i++) this.add(ot.at(i));
+		for(int i=0;i<ot.size();i++)
+			this.add(ot.at(i));
 	}
 	
 	public void add(int a) {
-		if(_sp==_set.length) resize();
+		if(_sp==_set.length)
+			resize();
 		_set[_sp] = a;
 		_sp++;
 	}
@@ -34,11 +36,13 @@ public class VertexSet {
 		for(int i=0;i<size();i++) ans+=this.at(i)+", ";
 		return ans;
 	}
+	
 	public String toFile() {
 		String ans = " ";
 		for(int i=0;i<size();i++) ans+=this.at(i)+", ";
 		return ans;
 	}
+	
 	/**
 	 * this method computes the intersection between this set and ot set.
 	 * @param ot - the other set
@@ -49,7 +53,9 @@ public class VertexSet {
 		while(i1<this.size() & i2 < ot.size()) {
 			int a1=this.at(i1), a2 = ot.at(i2);
 			if(a1==a2) {
-				ans.add(a1); i1++; i2++;}
+				ans.add(a1);
+				i1++;
+				i2++;}
 			else if(a1<a2) {i1++;}
 			else i2++;
 		}
@@ -58,8 +64,8 @@ public class VertexSet {
 	
 	private void resize() {
 		int[] tmp = new int[_sp+INC];
-		for(int i=0;i<_sp;i++) tmp[i]=_set[i];
+		for(int i=0;i<_sp;i++)
+			tmp[i]=_set[i];
 		_set=tmp;
 	}
-	
 }

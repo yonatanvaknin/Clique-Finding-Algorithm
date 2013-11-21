@@ -9,19 +9,19 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-
 /**
  * this class represents an undirected 0/1 sparse Graph 
  * @author Boaz
  *
  */
+
  class Graph {
 	 private String _file_name;
 	 private ArrayList <VertexSet> _V;
-	 private double _TH; // the threshold value
-	 private int _E_size = 0;
-	 private boolean _mat_flag=true;
-	 Graph(String file, double th) {
+	 private double _TH;
+	 private int _E_size = 0; //what?
+	 private boolean _mat_flag=true;  //what?
+	 Graph(String file, double th) { //constructor
 		this._file_name = file;
 		_TH = th;
 		_V = new  ArrayList <VertexSet>();
@@ -39,7 +39,6 @@ import java.util.Vector;
 			StringTokenizer st = new StringTokenizer(s,", ");
 			int len = st.countTokens();
 			int line = 0;
-			
 			String ll = "0%   20%   40%   60%   80%   100%";
 			int t = Math.max(1,len/ll.length());
 			if(Clique_Tester.Debug){
@@ -60,10 +59,10 @@ import java.util.Vector;
 			}
 	
 			while(s!=null) {
-				
 				if(Clique_Tester.Debug){
 					if(line%t==0) System.out.print(".");                                
 				}
+				
 				VertexSet vs = new VertexSet();
 				if(_mat_flag){
 					for(int i=0;i<len;i++) {
@@ -74,11 +73,10 @@ import java.util.Vector;
 						}
 					}
 				}
-				else {
+				else { //_mat_flag false
 					st.nextToken();
 					while(st.hasMoreTokens()) {
 						int ind = new Integer(st.nextToken()).intValue();
-						// bug fixed as for Ronens format.
 						if(line<ind) vs.add(ind);
 					}
 				}
@@ -97,11 +95,11 @@ import java.util.Vector;
 	
 	public VertexSet Ni(int i) {
 		VertexSet ans = _V.get(i);
-		return  ans;
+		return ans;
 	}
+	
 	public void print() {
 		System.out.println("Graph: |V|="+this._V.size()+" ,  |E|="+_E_size);
-		
 	}
 	
 	/*************** Clique Algorithms ******************/

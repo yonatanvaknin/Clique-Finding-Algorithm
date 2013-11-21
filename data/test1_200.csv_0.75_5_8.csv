@@ -1,4 +1,4 @@
-All Cliques: file [min max] TH,data/test1_200.csv,5, 8, 0.75
+All Cliques: file [min max] TH,C:/Users/simon/git/Clique-Finding-Algorithm/data/test1_200.csv,5, 8, 0.75
 index, edge, clique size, c0, c1, c2, c3, c4,  c5, c6, c7, c8, c9
 0, 8,5, 36,37,169,181,182,
 1, 8,5, 36,37,169,181,183,
