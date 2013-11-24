@@ -9,11 +9,11 @@ using namespace std;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	string in_file = (char*)argv[0][0];
+	char *in_file = (char*)argv[0][0];
 	double TH = (double)argv[0][1];
 	int minQ = (int)argv[0][2];
 	int maxQ = (int)argv[0][3];
-
+	in_file = "test1.csv";
 	clock_t t0 = clock();
 	Graph g(in_file,TH);
 	clock_t t1 = clock();

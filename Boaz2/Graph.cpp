@@ -2,17 +2,20 @@
 #include "Graph.h"
 // DFS algoritms, and member function allC_seed are not implemented
 
-Graph::Graph(string file, double th){
+Graph::Graph(char *file, double th){
 	this->_file_name = file;
 	_TH = th;
+	this->_E_size = 0;
 	init();
 }
 
 void Graph::init(){
 	ifstream fr;
-	fr.open(this->_file_name);
+	fr.open(_file_name);
+	if(fr.good()) cout<<"oved"<<endl;
 	string line;
 	getline(fr,line);
+	int i = 0;
 	// filling the graph
 	while (!line.empty()){
 		// implementing tokenizer, witch is : ", "
@@ -35,10 +38,12 @@ void Graph::init(){
 			val = stold(strVal);
 			if (val > _TH){
 				vs.add(len); // adding the current length counter
-				this->_E_size++;
+				_E_size++;
 			}
-
+			cout<<start<<endl;
+			cout<<"e size: "<<_E_size<<endl;
 		}
+		//cout<<"row: "<<i++<<endl;
 		getline(fr,line);
 		_V.push_back(vs);
 	}
