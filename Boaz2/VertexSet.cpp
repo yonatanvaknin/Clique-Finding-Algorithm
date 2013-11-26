@@ -19,7 +19,8 @@ void VertexSet::add(int a){
 
 void VertexSet::resize(){
 	int *tmp = new int[_sp+INC];
-		for(int i=0;i<_sp;i++) tmp[i]=_set[i];
+	int i;
+	for(i=0;i<_sp;i++) tmp[i]=_set[i];
 	_set=tmp;
 }
 
@@ -34,8 +35,12 @@ string VertexSet::toString(){
 }
 
 string VertexSet::toFile(){
+	stringstream ss;
 	string ans;
-		for(int i=0;i<_sp;i++) ans+=this->at(i)+", ";
+	for(int i=0;i<_sp;i++){
+		ss<<at(i)<<", ";
+	}
+	ans = ss.str();
 	return ans;
 }
 

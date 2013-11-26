@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include <sstream>
 
 #ifndef VERTEXSET_H
 #define VERTEXSET_H

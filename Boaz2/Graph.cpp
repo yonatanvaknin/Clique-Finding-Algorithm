@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "Graph.h"
 // DFS algoritms, and member function allC_seed are not implemented
+using namespace std;
 
-Graph::Graph(char *file, double th){
+Graph::Graph(char* file, double th){
 	this->_file_name = file;
 	_TH = th;
 	this->_E_size = 0;
@@ -18,7 +19,7 @@ void Graph::init(){
 	int i = 0;
 	// filling the graph
 	while (!line.empty()){
-		// implementing tokenizer, witch is : ", "
+		// implementing tokenizer, witch is : ","
 		// optional: getline(fr,line,",") - as "," a delimiter
 		int start = 0, end = 0,current = 0,len = 0;
 		long double val;
@@ -28,9 +29,10 @@ void Graph::init(){
 		int size = line.length();
 		while (end < size){
 			start = current;
-			while ((tmp = line.at(current)) != ','){
+			while ((tmp = line.at(current)) != ',' && tmp != '\n'){
 				current ++;
-			} // current points now at ','
+			} // current points now at ',' or the last one '\n'
+			size--; // we dont need to count ',' in the loop!
 			len++;
 			end = current;
 			current = end + 1;
@@ -40,8 +42,6 @@ void Graph::init(){
 				vs.add(len); // adding the current length counter
 				_E_size++;
 			}
-			cout<<start<<endl;
-			cout<<"e size: "<<_E_size<<endl;
 		}
 		//cout<<"row: "<<i++<<endl;
 		getline(fr,line);
@@ -118,9 +118,10 @@ vector<VertexSet> Graph::allC(vector<VertexSet> c0){
 }
 
 VertexSet Graph::intersection(VertexSet c){
-	VertexSet ans = _V.at(c.at(0));
+	VertexSet ans(_V.at(c.at(0)));
 	for (int i = 0; (ans.size() > 0) & (i < c.size()); i++) {
-		ans = ans.intersection(_V.at(c.at(i)));
+		VertexSet tmp(ans.intersection(_V.at(c.at(i))));
+		ans = tmp;
 	}
 	return ans;
 }
@@ -136,11 +137,13 @@ vector<VertexSet> Graph::allEdges(){
 	vector<VertexSet> ans;
 	for (int i=0; i < this->_V.size(); i++){
 		VertexSet curr = _V.at(i);
-		for (int a=0; i < curr.at(i); a++){ // "triangle" iteration
-			VertexSet tmp;
-			tmp.add(i);
-			tmp.add(curr.at(i));
-			ans.push_back(tmp);
+		for (int a=0; a < curr.size(); a++){ // "triangle" iteration
+			if (i < curr.at(a)){
+				VertexSet tmp;
+				tmp.add(i);
+				tmp.add(curr.at(a));
+				ans.push_back(tmp);
+			}
 		}
 	}
 	return ans;
@@ -185,10 +188,10 @@ void Graph::write2file(){
 	ss << "ALL_Cliques: of file: "<< _file_name <<",  TH:" << _TH<<"\n";
 	string s = ss.str();
 	fw.write(s.c_str(),s.size());
-	for(size_t i = 0; i < this->_V.size(); i++){
+	for(int i = 0; i < this->_V.size(); i++){
 		VertexSet curr = _V.at(i);
-		ss.flush();
-		ss<<i<<", "<<curr.toFile();
+		ss.str("");
+		ss<<i<<", "<<curr.toFile()<<"\n";
 		s = ss.str();
 		fw.write(s.c_str(),s.size());
 	}

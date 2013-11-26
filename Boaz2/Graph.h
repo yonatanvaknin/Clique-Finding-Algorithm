@@ -32,7 +32,7 @@ private:
 	void addToSet(vector<VertexSet> ans, vector<Clique> c1);
 public:
 	Graph(){};// default empty constuctor
-	Graph(char *file, double th);
+	Graph(char* file, double th);
 	VertexSet Ni(int i);
 	void print();
 	// clique algorithms def//
