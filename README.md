@@ -1,3 +1,0 @@
-Clique-Finding-Algorithm
-========================
-yeah
