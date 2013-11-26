@@ -1,0 +1,39 @@
+﻿Build started 20/11/2013 00:27:29.
+     1>Project "C:\Users\Kotev-Emet\documents\visual studio 2013\Projects\Clique Finder\Clique Finder\Clique Finder.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Clique.cpp exe.cpp Graph.cpp Tokenize.cpp
+         Tokenize.cpp
+         Graph.cpp
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\vertexset1.h(38): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(41): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(65): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(67): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(107): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(161): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(175): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(203): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(212): warning C4018: '>' : signed/unsigned mismatch
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\graph.cpp(232): warning C4018: '<' : signed/unsigned mismatch
+         exe.cpp
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\vertexset1.h(38): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\exe.cpp(22): warning C4244: 'initializing' : conversion from 'time_t' to 'long', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\exe.cpp(25): warning C4244: 'initializing' : conversion from 'time_t' to 'long', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\exe.cpp(31): warning C4244: 'initializing' : conversion from 'time_t' to 'long', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\exe.cpp(37): warning C4244: 'argument' : conversion from 'double' to 'char', possible loss of data
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\exe.cpp(45): warning C4244: 'initializing' : conversion from 'time_t' to 'long', possible loss of data
+         Clique.cpp
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\vertexset1.h(38): warning C4554: '&' : check operator precedence for possible error; use parentheses to clarify precedence
+         Generating Code...
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\tokenize.cpp(52): warning C4715: 'Tokenize::nextToken' : not all control paths return a value
+     1>c:\users\kotev-emet\documents\visual studio 2013\projects\clique finder\clique finder\tokenize.cpp(63): warning C4715: 'Tokenize::elementAt' : not all control paths return a value
+       Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kotev-Emet\documents\visual studio 2013\Projects\Clique Finder\Debug\Clique Finder.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kotev-Emet\documents\visual studio 2013\Projects\Clique Finder\Debug\Clique Finder.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kotev-Emet\documents\visual studio 2013\Projects\Clique Finder\Debug\Clique Finder.lib" /MACHINE:X86 Debug\Clique.obj
+         Debug\exe.obj
+         Debug\Graph.obj
+         Debug\Tokenize.obj
+         Clique Finder.vcxproj -> C:\Users\Kotev-Emet\documents\visual studio 2013\Projects\Clique Finder\Debug\Clique Finder.exe
+     1>Done Building Project "C:\Users\Kotev-Emet\documents\visual studio 2013\Projects\Clique Finder\Clique Finder\Clique Finder.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.06
