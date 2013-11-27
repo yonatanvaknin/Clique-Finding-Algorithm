@@ -10,7 +10,7 @@ using namespace std;
 int _tmain(int argc, char* argv[])
 {
 	
-	char* in_file = "test1.csv";
+	char* in_file = "miniTest.csv";
 	double TH = 0.75;
 	int minQ = 6;
 	int maxQ = 10;
