@@ -7,15 +7,18 @@ using namespace std;
 bool Clique_Tester::Debug;
 bool Clique_Tester::Convert;
 Graph::Graph(){
+	//cout << "fun: graph\n";
 
 }
 Graph::Graph(string file, double th){
+	//cout << "fun: graph\n";
 	_file_name = file;
 	_TH = th;
 	_V = vector<VertexSet1>();
 	init();
 }
 Graph::Graph(const Graph &g){
+	//cout << "fun: graph\n";
 	_file_name = g._file_name;
 	_TH = g._TH;
 	_V = vector<VertexSet1>(g._V);
@@ -23,6 +26,7 @@ Graph::Graph(const Graph &g){
 }
 
 void Graph::operator=(Graph &g){
+	//cout << "fun: graph\n";
 	_file_name = g._file_name;
 	_TH = g._TH;
 	_V = vector<VertexSet1>(g._V);
@@ -30,7 +34,7 @@ void Graph::operator=(Graph &g){
 }
 void Graph::init() {
 	
-	
+	//cout << "fun: graph init\n";
 	ifstream fr(_file_name);
 	string s = "";
 	getline(fr, s);
@@ -40,7 +44,7 @@ void Graph::init() {
 	string ll = "0%   20%   40%   60%   80%   100%";
 	int t = fmax(1, len / ll.length());
 	if (Clique_Tester::Debug)
-		cout << "Reading a corrolation matrix of size: " << len << "*" << len << " this may take a while" << "\n" << ll;
+		cout << "Reading a corrolation matrix of size: " << len << "*" << len << " this may take a while" << "\n" << ll<<endl;
 	_mat_flag = true;
 	if (st.elementAt(0).at(0) == 'A') {
 		if (Clique_Tester::Debug){
@@ -103,6 +107,7 @@ void Graph::print() {
 }
 
 vector<VertexSet1> Graph::allEdges() { // all edges – all cliques of size 2/
+	//cout << "fun: void AllEdges\n";
 	vector<VertexSet1> ans = vector<VertexSet1>();
 	for (int i = 0; i<_V.size(); i++) {
 		VertexSet1 curr = _V.at(i);
@@ -124,6 +129,7 @@ vector<VertexSet1> Graph::allEdges() { // all edges – all cliques of size 2/
 *
 */
 vector<VertexSet1>  Graph::All_Cliques_DFS(int min_size, int max_size) {
+	//cout << "fun: vector All_Clique_DFS\n";
 	Clique::init(*this);
 	vector<VertexSet1> ans = vector<VertexSet1>();
 	vector<VertexSet1>C0 = allEdges(); // all edges – all cliques of size 2/
@@ -148,6 +154,7 @@ vector<VertexSet1>  Graph::All_Cliques_DFS(int min_size, int max_size) {
 * @param max_size
 */
 void Graph::All_Cliques_DFS(string out_file, int min_size, int max_size) {
+	//cout << "fun: void All_Clique_DFS\n";
 	Clique::init(*this);
 	vector<VertexSet1>C0 = allEdges(); // all edges – all cliques of size 2/
 	int len = C0.size();
@@ -164,7 +171,7 @@ void Graph::All_Cliques_DFS(string out_file, int min_size, int max_size) {
 		cout << ll;
 	}
 	fw << "All Cliques: file [min max] TH," << this->_file_name << "," << min_size << ", " << max_size << ", " << this->_TH;
-	fw << "index, edge, clique size, c0, c1, c2, c3, c4,  c5, c6, c7, c8, c9";
+	fw << "\nindex, edge, clique size, c0, c1, c2, c3, c4,  c5, c6, c7, c8, c9";
 	for (int i = 0; i<len; i++) {
 
 		VertexSet1 curr_edge = C0.at(i);
@@ -200,11 +207,13 @@ void Graph::All_Cliques_DFS(string out_file, int min_size, int max_size) {
 * @param C1
 */
 void Graph::addToSet(vector<VertexSet1> ans, vector<Clique> C1) {
+	cout << "fun: adtoset\n";
 	for (int i = 0; i<C1.size(); i++) {
 		ans.push_back(C1.at(i).clique());
 	}
 }
 vector<Clique> Graph::allC_seed(Clique edge, int min_size, int max_size) {
+	//cout << "fun: allC_seed\n";
 	vector<Clique> ans = vector<Clique>();
 	ans.push_back(edge);
 	int i = 0;
@@ -226,6 +235,7 @@ vector<Clique> Graph::allC_seed(Clique edge, int min_size, int max_size) {
 }
 
 void Graph::write2file() {
+	//cout << "fun: write2file\n";
 	ofstream fw;
 	fw = ofstream(this->_file_name + "_DG.txt");
 	fw << "ALL_Cliques: of file: " << _file_name << ",  TH:" << this->_TH << "\n";

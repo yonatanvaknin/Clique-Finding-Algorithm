@@ -13,9 +13,10 @@ public:
 	static bool Convert;
 
 	static void Clique_Tester::init(){
+		//cout << "fun: init\n";
 		minQ = 6, maxQ = 10;
 		TH = 0.75;
-		in_file = "test1.csv";
+		in_file = "E:\\test2.csv";
 		Debug = true;
 		MAX_CLIQUE = 100000;
 		Convert = true;
@@ -27,6 +28,7 @@ public:
 		cout << "Wrong Parameters! should use: java -jar All_Cliques test1.csv 0.7 5 7 test1_out.txt 10000 true";
 	}
 	static void parse(string a[], int c){
+		//cout << "fun: parse\n";
 
 		in_file = a[0];
 		TH = stod(a[1]);
